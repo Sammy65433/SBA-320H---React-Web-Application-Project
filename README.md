@@ -240,12 +240,17 @@ A clean structure makes the project easier to build, debug, and maintain as it g
 **Why I am doing this before fetching data:**
 This gives the app structure first so I know where the data will go once the API is connected.
 
-**Also set up the `.env` now** before you start fetching.
+**Also set up the `.env` now** before you start fetching and add it to 
+`.gitignore.`
 
 
+### 5. Fetch trending movies from TMDB
+- Make an API request with `fetch`
+- Load trending or popular movies when the app starts
+- Render movie cards on the page
 
-
-
+**Why I am doing this:**
+This proves the API connection works and gets movie data into the DOM, which is a main requirement of the assignment.
 
 
 

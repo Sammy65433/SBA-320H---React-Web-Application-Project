@@ -16,6 +16,7 @@ export default function App() {
       <GenreFilter />
       <MovieList />
       <Watchlist />
+      
 
     </div>
   )
