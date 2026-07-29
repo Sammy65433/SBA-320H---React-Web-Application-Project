@@ -370,6 +370,15 @@ What each `console.log` is checking:
 - change background and font to blk and arial in `App.css`
 - commit
 
+### Header Styling
+I styled the header to give the app a more cinematic movie-night look. I imported Google Fonts in `index.html` and used `Cinzel` for the main titles to create a dramatic feel. The header includes the app title, **Weekend Watchlist**, and a short subtitle to explain the purpose of the app.
+
+### Movie List Styling
+I created a separate `MovieList.css` file to style the trending movie section. I used CSS Grid so the movie cards can automatically adjust across the page. This keeps the layout organized and makes it easier to display multiple movie results in a clean way.
+
+### Movie Card Styling
+I styled each movie card with a dark background, rounded corners, spacing, and a soft box shadow. I also added a hover effect using `transform: translateY(-5px)` so each card slightly lifts when hovered over. This makes the UI feel more interactive and polished.
+
 
 ### 7. Add search functionality
 - Create a search input
@@ -378,6 +387,8 @@ What each `console.log` is checking:
 
 **Why I am doing this after the initial fetch:**
 It is easier to add search once the basic fetch and rendering already work.
+
+
 
 
 MDN 
