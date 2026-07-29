@@ -249,9 +249,41 @@ This gives the app structure first so I know where the data will go once the API
 - Load trending or popular movies when the app starts
 - Render movie cards on the page
 
+used starter code for all components:
+
+```jsx
+export default function Header() {
+  return <h1>Weekend Watchlist</h1>;
+}
+```
+and one for each 
+- `SearchBar.jsx`
+- `GenreFilter.jsx`
+- `MovieList.jsx`
+- `Header.jsx`
+- `MovieCard.jsx`
+- `Watchlist.jsx`
+
+- ` Fetch TMDB data`
+- store it in state
+- confirm it appears in the console or on screen
+
+1. set up `tmdb.js`
+2. fetch in `App.jsx`
+3. store movies in state
+4. pass movies to `MovieList`
+5. then build `MovieCard`
+
 **Why I am doing this:**
 This proves the API connection works and gets movie data into the DOM, which is a main requirement of the assignment.
 
+
+### 6. Create reusable movie card components
+- Build a `MovieCard` component
+- Display poster, title, rating, and overview or release date
+
+**Why I am doing this now:**
+Reusable components keep the code organized and make it easier to reuse the same UI for search results and filtered results. And i wanna see the posters.
 
 
 

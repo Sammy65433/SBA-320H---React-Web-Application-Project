@@ -1,6 +1,18 @@
 
 
 
-export default function MovieList() {
-  return <div>Movie List</div>;
+export default function MovieList({ movies = [] }) {
+  return (
+    
+    <section>
+<h2>Trending Movies</h2>
+{movies.map((movie) => (
+    <p key={movie.id}>{movie.title}</p>
+))}
+    </section>
+
+
+
+  );
+  
 }
