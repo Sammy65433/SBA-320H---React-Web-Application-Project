@@ -371,6 +371,13 @@ What each `console.log` is checking:
 - commit
 
 
+### 7. Add search functionality
+- Create a search input
+- Let users search movies by title
+- Show matching results from TMDB
+
+**Why I am doing this after the initial fetch:**
+It is easier to add search once the basic fetch and rendering already work.
 
 
 MDN 
