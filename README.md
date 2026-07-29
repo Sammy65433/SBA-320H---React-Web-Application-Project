@@ -296,26 +296,82 @@ Reusable components keep the code organized and make it easier to reuse the same
 
 What each `console.log` is checking:
 
+- `API KEY`
+  - checks whether the TMDB API key is being loaded correctly from the `.env` file
+  - helps confirm the environment variable is not `undefined`
+  - if this is missing or wrong, the API request will fail
+
+- `Fetching trending movies...`
+  - confirms that the `getTrendingMovies()` function is running
+  - helps show that the fetch request is about to be sent
+
+- `Response`
+  - checks the raw response object returned by `fetch()`
+  - helps verify whether the request succeeded
+  - useful for checking values like:
+    - `status`
+    - `ok`
+    - `url`
+
+- `TMDB data`
+  - checks the full JSON object returned by the TMDB API
+  - helps you inspect the actual structure of the returned data
+  - confirms whether the movie list is inside `data.results`
+
+- `movieData from API in App`
+  - checks the array returned from `getTrendingMovies()` after the API call finishes
+  - helps confirm that `App.jsx` is receiving the movie data properly
+
+- `movies state in App`
+  - checks whether the `movies` state was updated successfully with `setMovies(movieData)`
+  - helps confirm the fetched data is now stored in React state
+
 - `MovieList received movies`
-  - confirms the prop is arriving
+  - checks that the `movies` state was passed down from `App.jsx` into `MovieList` as a prop
+  - confirms prop passing is working correctly
 
 - `MovieList movies length`
-  - confirms it is an array with items
+  - checks how many movies are in the array being rendered
+  - helps confirm whether the list has data before mapping through it
 
 - `Mapping movie`
-  - shows each movie object during the loop
+  - checks each individual movie object during the `.map()` loop
+  - helps inspect the contents of each movie before rendering
 
 - `Movie ID`
-  - checks you have a valid React key
+  - checks that each movie has a valid unique `id`
+  - important because React uses that `id` as the `key`
 
 - `Movie title`
-  - checks title exists
+  - checks that each movie object contains the `title` property
+  - confirms the title can be displayed correctly in the UI
 
 - `MovieCard received movie`
-  - confirms the single movie object is reaching the card
+  - checks that the single movie object is being passed properly into the `MovieCard` component
+  - confirms child components are receiving the correct props
 
 - `MovieCard imageUrl`
-  - checks poster URL is being built correctly
+  - checks the final image URL built from `movie.poster_path`
+  - helps verify that the poster URL is correct or that the fallback image is being used when no poster exists
+
+- `Fetch error`
+  - checks whether an error happened during the API request
+  - helps identify issues such as:
+    - invalid API key
+    - network problems
+    - incorrect endpoint
+    - failed response parsing
+
+
+- create `MovieList.css`
+- create `MovieCard.css`
+- import both
+- check grid layout works
+- change background and font to blk and arial in `App.css`
+- commit
+
+
+
 
 MDN 
 

@@ -1,0 +1,21 @@
+
+
+
+
+.movie-list-section {
+    padding: 2rem;
+}
+
+.movie-list-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color:white;
+    text-align: center
+}
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 1.5rem;
+    align-items: start;
+}

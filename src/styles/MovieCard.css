@@ -1,0 +1,33 @@
+.movie-card {
+    background-color: black;
+    border-radius: 12px;
+    padding: 1rem;
+    color: white;
+
+    /* Adds a soft shadow to make movie card stand out from the background */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    /* Makes the hover movement smooth instead of jumping instantly */
+    transition: transform 0.2s ease;
+
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+}
+
+.movie-poster {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.movie-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.movie-rating,
+.movie-release-date {
+    font-size: 0.95rem;
+    margin: 0.25rem;
+}

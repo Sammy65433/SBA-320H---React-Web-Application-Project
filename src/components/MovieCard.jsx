@@ -1,3 +1,5 @@
+import "./../styles/MovieCard.css"
+
 
 export default function MovieCard({ movie }) {
 
@@ -22,28 +24,22 @@ export default function MovieCard({ movie }) {
         {/* Display movie poster img  
     src for imageUrl
     alt for movie title for access and screen  */}
-
-        <img src={imageUrl} alt={movie.title} />
+        
+        <img className="movie-poster" src={imageUrl} alt={movie.title} />
 
         {/* Display movie title 
     heading elements */}
-        <h3>{movie.title}</h3>
+        <h3 className="movie-title">{movie.title}</h3>
 
         {/* Display movie rating from TMDB */}
 
-        <p>Rating: {movie.vote_average}</p>
+        <p className="movie-rating">Rating: {movie.vote_average}</p>
 
         {/* Display movie release date  */}
-        <p>Release Date: {movie.release_date}</p>
-
-
-
-
-
-
+        <p className="movie-release-date">Release Date: {movie.release_date}</p>
 
       </div>;
 
     </>
-  )
+  );
 }

@@ -1,5 +1,6 @@
 
 import MovieCard from "./MovieCard";
+import "./../styles/MovieList.css"
 
 export default function MovieList({ movies = [] }) {
 
@@ -13,21 +14,24 @@ export default function MovieList({ movies = [] }) {
 
   return (
 
-    <section>
-      <h2>Trending Movies</h2>
-      {movies.map((movie) => {
-        console.log("Mapping movies:", movie);
-        console.log("Movie ID:", movie.id);
-        console.log("Mapping title:", movie.title);
+    <section className="movie-list-section">
+
+      <h2
+      className="movie-list-title">Trending Movies</h2>
+
+      <div className="movie-list">
+      {movies.map((movie) => (
+
+        // console.log("Mapping movies:", movie);
+        // console.log("Movie ID:", movie.id);
+        // console.log("Mapping title:", movie.title);
 
 
-        return <MovieCard key={movie.id}
-          movie={movie} />;
-      })}
+        <MovieCard key={movie.id}
+          movie={movie} />
+      ))}
+      </div>
     </section>
-
-
-
   );
 
 }
