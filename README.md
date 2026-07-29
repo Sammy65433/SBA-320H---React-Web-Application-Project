@@ -234,6 +234,8 @@ A clean structure makes the project easier to build, debug, and maintain as it g
 - `Watchlist.jsx`
   - shows saved watchlist movies
 
+- then wire them into `App.jsx`
+
 
 **Why I am doing this before fetching data:**
 This gives the app structure first so I know where the data will go once the API is connected.
