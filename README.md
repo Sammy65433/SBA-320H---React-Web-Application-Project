@@ -158,7 +158,6 @@ Build a simple movie discovery app that meets the SBA requirements:
   - Search movies
   - Filter by genre
   - Add movies to watchlist
-- Sketch the basic layout
 
 
 ### 2. Test the TMDB API
@@ -167,6 +166,86 @@ Build a simple movie discovery app that meets the SBA requirements:
 - Get an API key
 - Test a few endpoints in the browser or documentation
 - Confirm what movie data is available
+
+
+### 3. Set up the React project
+
+- Create the project
+- Clean up starter files
+- Set up folders such as:
+  - components
+  - context
+  - services
+  - styles
+
+**Why I am doing this:**
+A clean structure makes the project easier to build, debug, and maintain as it grows.
+
+---
+
+### 4. Build the basic UI structure
+
+- Create the main layout
+- Add placeholders for:
+  - Header
+  - Search bar
+  - Genre filter
+  - Movie list
+  - Watchlist section
+
+  src/
+  components/
+    Header.jsx
+    SearchBar.jsx
+    GenreFilter.jsx
+    MovieList.jsx
+    MovieCard.jsx
+    Watchlist.jsx
+  context/
+    WatchlistContext.jsx
+  services/
+    tmdb.js
+  styles/
+    App.css
+    index.css  
+  App.jsx
+  main.jsx
+.env
+
+- `App.jsx`
+  - main layout
+  - renders all sections
+
+- `Header.jsx`
+  - app title
+
+- `SearchBar.jsx`
+  - search input and button
+
+- `GenreFilter.jsx`
+  - dropdown for genres
+
+- `MovieList.jsx`
+  - maps through movies and renders `MovieCard`
+
+- `MovieCard.jsx`
+  - displays one movie
+
+- `Watchlist.jsx`
+  - shows saved watchlist movies
+
+
+**Why I am doing this before fetching data:**
+This gives the app structure first so I know where the data will go once the API is connected.
+
+**Also set up the `.env` now** before you start fetching.
+
+
+
+
+
+
+
 
 
 
