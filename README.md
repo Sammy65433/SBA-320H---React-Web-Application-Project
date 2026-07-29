@@ -392,6 +392,37 @@ It is easier to add search once the basic fetch and rendering already work.
 
 
 MDN 
+## MDN Resources Used
+
+- CSS Grid Layout  
+  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
+
+- box-shadow  
+  https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
+
+- transition  
+  https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+
+- transform  
+  https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+
+- translateY()  
+  https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateY
+
+- :hover  
+  https://developer.mozilla.org/en-US/docs/Web/CSS/:hover
+
+- Forms  
+  https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms
+
+- Event.preventDefault()  
+  https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+
+- encodeURIComponent()  
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+
+- Array.prototype.map()  
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 
 - `Array.map()`
   - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map`
@@ -411,19 +442,6 @@ MDN
   - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects`
 
 
-Samuel github: https://github.com/Sammy65433/SBA-320H---React-Web-Application-Project
-
-
-TMDB movie Docs 
-https://developer.themoviedb.org/docs/getting-started
-
-TMDB movie Docs for search movie 
-https://developer.themoviedb.org/reference/search-movie
-
-TMDB site 
-https://www.themoviedb.org/tv
-
-
 `MDN docs`
 
 **`Array.prototype.map()`**:
@@ -441,3 +459,19 @@ https://www.themoviedb.org/tv
 
 - **React rendering-list**
   - `https://react.dev/learn/rendering-lists`
+
+
+
+
+
+`Samuel github: https://github.com/Sammy65433/SBA-320H---React-Web-Application-Project`
+
+
+`TMDB movie Docs` 
+https://developer.themoviedb.org/docs/getting-started
+
+`TMDB movie Docs for search movie` 
+https://developer.themoviedb.org/reference/search-movie
+
+`TMDB site` 
+https://www.themoviedb.org/tv
