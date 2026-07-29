@@ -1,8 +1,6 @@
-React Developer Curriculum
-☰
-> SBA 320H - React Web Application Project
-SBA 320H - React Web Application Project
-Now, it is time for you to put everything you've learned to the test and apply it to a practical web application.
+
+# SBA 320H - React Web Application Project
+
 
 The content, context, and objective of your application is entirely up to you. Be creative, and think of something that will both allow you to demonstrate the skills you've acquired thus far and solve a need (practical or fictional).
 
@@ -127,7 +125,7 @@ React Docs
 GitHub Pages
 
 
-***************************************************
+************************************************************************
 # Weekend Watchlist 
 
 Weekend Watchlist is a React web application that uses the TMDB API to help users browse movies, search by title, filter by genre, and save movies to a personal watchlist.
