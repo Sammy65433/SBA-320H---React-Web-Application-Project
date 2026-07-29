@@ -274,6 +274,15 @@ and one for each
 4. pass movies to `MovieList`
 5. then build `MovieCard`
 
+
+- `function MovieList({ movies })`
+  - receives a `movies` prop from the parent component
+- `movies.map(...)`
+  - loops through the movies array
+  - returns a new `<p>` element for each movie
+- `key={movie.id}`
+  - gives React a unique identifier for each rendered item
+
 **Why I am doing this:**
 This proves the API connection works and gets movie data into the DOM, which is a main requirement of the assignment.
 
@@ -285,7 +294,47 @@ This proves the API connection works and gets movie data into the DOM, which is 
 **Why I am doing this now:**
 Reusable components keep the code organized and make it easier to reuse the same UI for search results and filtered results. And i wanna see the posters.
 
+What each `console.log` is checking:
 
+- `MovieList received movies`
+  - confirms the prop is arriving
+
+- `MovieList movies length`
+  - confirms it is an array with items
+
+- `Mapping movie`
+  - shows each movie object during the loop
+
+- `Movie ID`
+  - checks you have a valid React key
+
+- `Movie title`
+  - checks title exists
+
+- `MovieCard received movie`
+  - confirms the single movie object is reaching the card
+
+- `MovieCard imageUrl`
+  - checks poster URL is being built correctly
+
+MDN 
+
+- `Array.map()`
+  - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map`
+
+- `Conditional operator` for:
+  - `movie.poster_path ? ... : ...`
+  - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator`
+
+- `Template literals`
+  - for building the image URL
+  - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals`
+
+- `Functions`
+  - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions`
+
+- `JavaScript objects`
+  - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects`
 
 
 Samuel github: https://github.com/Sammy65433/SBA-320H---React-Web-Application-Project
@@ -299,3 +348,22 @@ https://developer.themoviedb.org/reference/search-movie
 
 TMDB site 
 https://www.themoviedb.org/tv
+
+
+`MDN docs`
+
+**`Array.prototype.map()`**:
+- `map()`  
+  `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map`
+
+- **Arrow functions**
+  `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions`
+
+- **Destructuring function parameters** for `({ movies })`
+  `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring`
+
+- **JavaScript functions**
+  `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions`
+
+- **React rendering-list**
+  - `https://react.dev/learn/rendering-lists`

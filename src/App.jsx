@@ -29,7 +29,7 @@ export default function App() {
       <Header />
       <SearchBar />
       <GenreFilter />
-      <MovieList />
+      <MovieList movies={movies} />
       <Watchlist />
 
 
