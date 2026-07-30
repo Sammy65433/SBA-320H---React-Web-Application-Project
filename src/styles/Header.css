@@ -1,15 +1,22 @@
 
-
+.header {
+  text-align: center;
+  margin: 3rem 0 2rem;
+}
 
 .app-title {
-    font-family: "Cinzel", sans-serif;
-    font-size: 3rem;
-    letter-spacing: 2px;
-    color: white;
+  font-family: "Cinzel", serif;
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 0.75rem;
+  letter-spacing: 2px;
 }
 
 .app-subtitle {
-  text-align: center;
-  color: #bdbdbd;
-  margin-top: 0;
+  font-size: 1.1rem;
+  color: whitesmoke;
+  margin: 0 auto;
+  max-width: 600px;
+  line-height: 1.6;
 }
+

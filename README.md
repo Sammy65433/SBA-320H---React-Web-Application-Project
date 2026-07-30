@@ -1,5 +1,10 @@
 
-# SBA 320H - React Web Application Project
+# Weekend Watchlist
+
+`**Project:** SBA 320H - React Web Application Project ` 
+**Date:** July 29, 2026  
+**Program:** Per Scholas Software Engineering
+
 
 
 The content, context, and objective of your application is entirely up to you. Be creative, and think of something that will both allow you to demonstrate the skills you've acquired thus far and solve a need (practical or fictional).
@@ -126,12 +131,12 @@ GitHub Pages
 
 
 ************************************************************************
-# Weekend Watchlist 
+## Weekend Watchlist 
 
 Weekend Watchlist is a React web application that uses the TMDB API to help users browse movies, search by title, filter by genre, and save movies to a personal watchlist.
 
 
-## Project Goal
+### Project Goal
 Build a simple movie discovery app that meets the SBA requirements:
 - React application
 - External API request
@@ -140,7 +145,7 @@ Build a simple movie discovery app that meets the SBA requirements:
 - Deployed live site
 - README documentation
 
-## Tech Stack
+### Tech Stack
 - HTML
 - CSS
 - JavaScript
@@ -150,9 +155,11 @@ Build a simple movie discovery app that meets the SBA requirements:
 - localStorage
 - Netlify
 
-## Step-by-Step Development Plan
+### Step-by-Step Development Plan
 
-### 1. Plan the app features and layout
+
+
+## 1. Plan the app features and layout
 - Decide on the core features:
   - Show trending movies
   - Search movies
@@ -160,7 +167,10 @@ Build a simple movie discovery app that meets the SBA requirements:
   - Add movies to watchlist
 
 
-### 2. Test the TMDB API
+
+
+
+## 2. Test the TMDB API
 **What I am doing:**
 - Create a TMDB account
 - Get an API key
@@ -168,7 +178,10 @@ Build a simple movie discovery app that meets the SBA requirements:
 - Confirm what movie data is available
 
 
-### 3. Set up the React project
+
+
+
+## 3. Set up the React project
 
 - Create the project
 - Clean up starter files
@@ -181,9 +194,13 @@ Build a simple movie discovery app that meets the SBA requirements:
 **Why I am doing this:**
 A clean structure makes the project easier to build, debug, and maintain as it grows.
 
----
 
-### 4. Build the basic UI structure
+
+
+
+
+
+## 4. Build the basic UI structure
 
 - Create the main layout
 - Add placeholders for:
@@ -244,7 +261,10 @@ This gives the app structure first so I know where the data will go once the API
 `.gitignore.`
 
 
-### 5. Fetch trending movies from TMDB
+
+
+
+## 5. Fetch trending movies from TMDB
 - Make an API request with `fetch`
 - Load trending or popular movies when the app starts
 - Render movie cards on the page
@@ -287,7 +307,11 @@ and one for each
 This proves the API connection works and gets movie data into the DOM, which is a main requirement of the assignment.
 
 
-### 6. Create reusable movie card components
+
+
+
+
+## 6. Create reusable movie card components
 - Build a `MovieCard` component
 - Display poster, title, rating, and overview or release date
 
@@ -380,13 +404,123 @@ I created a separate `MovieList.css` file to style the trending movie section. I
 I styled each movie card with a dark background, rounded corners, spacing, and a soft box shadow. I also added a hover effect using `transform: translateY(-5px)` so each card slightly lifts when hovered over. This makes the UI feel more interactive and polished.
 
 
-### 7. Add search functionality
+
+
+
+
+
+## 7. Add search functionality
 - Create a search input
 - Let users search movies by title
 - Show matching results from TMDB
 
+### Search Functionality
+I added search functionality so users can look up movies by title instead of only viewing trending movies. The search feature starts in the `SearchBar` component, where the user types a movie title into a controlled input field. When the form is submitted, the query is passed to `App.jsx`, which calls the `searchMovies()` function in `tmdb.js`. That function sends a request to the TMDB search endpoint and returns matching movie results, which are then stored in state and displayed in the movie list.
+
+### Why I Added Search
+I added search after the initial API fetch was already working because it was easier to build on top of a stable data flow. First, I confirmed that the app could successfully fetch and render trending movies. Once that worked, I added user input and dynamic search so the app became more interactive and practical.
+
 **Why I am doing this after the initial fetch:**
 It is easier to add search once the basic fetch and rendering already work.
+
+
+### Console Logs Used for Debugging
+I used `console.log()` statements throughout the project to confirm that functions were running, API requests were being sent successfully, and movie data was being returned in the expected format. I also logged response objects and results arrays to better understand the TMDB API structure. I used `console.error()` in catch blocks to identify request failures without crashing the application.
+
+- `console.log("Fetching trending movies...")`
+  - confirms that `getTrendingMovies()` is running
+  - shows the app has started the API request process
+  - useful for verifying the function is actually being called
+
+- `console.log("Response:", response)`
+  - shows the raw `Response` object returned by `fetch()`
+  - lets you inspect important details like:
+    - `status`
+    - `ok`
+    - `url`
+    - `type`
+  - helps confirm whether the request to TMDB succeeded before converting it to JSON
+
+- `console.log("TMDB data:", data)`
+  - shows the full JavaScript object returned from `response.json()`
+  - helps you inspect the exact structure of the TMDB API response
+  - confirms whether the movie array exists inside `data.results`
+
+- `console.error(error)`
+  - logs any error caught in the `catch` block
+  - helps debug problems such as:
+    - bad API key
+    - failed fetch request
+    - wrong endpoint
+    - network issues
+
+For your search function logs:
+
+- `console.log("Search query:", query)`
+  - confirms the search function received the user's typed movie title correctly
+
+- `console.log("Search response:", response)`
+  - shows the raw fetch response from the search endpoint
+  - helps verify the search request reached TMDB successfully
+
+- `console.log("Search data from TMDB:", data)`
+  - shows the full JSON object returned from the movie search request
+  - helps inspect how TMDB structures search results
+
+- `console.log("Search movie results:", data.results)`
+  - shows only the array of movie objects from the search response
+  - confirms the app is pulling the correct property to display search results
+
+- `console.error("Search movies error:", error)`
+  - logs any problem that happens during the search request
+  - helps debug broken search behavior without crashing the app
+
+
+I added `searchMovies()` to `tmdb.js` to keep all TMDB fetch logic in one place. This separates API code from UI code and makes the app easier to organize and maintain.
+
+### Search Bar Component
+I created a `SearchBar` component so users can search for movies by title. This component uses React state to keep track of what the user types into the input field. When the form is submitted, it prevents the page from refreshing, checks that the input is not empty, and then sends the search query to the parent component using the `onSearch` prop.
+
+- user types in `SearchBar`
+- `query` updates in local state
+- submit calls `onSearch(query)`
+- `App.jsx` runs `handleSearch`
+- `searchMovies(query)` fetches from TMDB
+- `setMovies(searchResults)` updates the UI
+
+Console logs meaning:
+- `Search input:`
+  - confirms typing works
+- `Search submitted:`
+  - confirms form submit works
+- `handleSearch query:`
+  - confirms `App` received the query
+- `searchResults:`
+  - confirms TMDB returned results
+
+  ### Search Testing
+I tested the search feature by typing movie titles into the search bar and checking whether the results updated correctly on the page. I also used `console.log()` statements to debug each step of the process, including:
+- user input in the search field
+- form submission
+- query passed to `handleSearch()`
+- API response from TMDB
+- search results array returned to state
+
+### Movie Card Styling
+I styled each movie card using a separate CSS file to make the movie list more polished and easier to read. The cards use a dark background, white text, rounded corners, spacing, and a soft shadow to stand out from the page. I also added a hover effect so each card lifts slightly when the user hovers over it, making the interface feel more interactive.
+
+### Short Sum
+At this stage, the app can fetch trending movies, display them in styled movie cards, and let users search for movies by title using the TMDB API. I also improved the UI by adding hover effects, spacing, and a fallback design for movies with missing poster images.
+
+
+## 8. Add genre filtering
+- Fetch genre data from TMDB
+- Create a dropdown or button filter
+- Show movies by selected genre
+
+**Why I am doing this after search:**
+Filtering is easier once the app already knows how to fetch and display movie data.
+
 
 
 
@@ -441,9 +575,6 @@ MDN
 - `JavaScript objects`
   - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects`
 
-
-`MDN docs`
-
 **`Array.prototype.map()`**:
 - `map()`  
   `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map`
@@ -460,7 +591,85 @@ MDN
 - **React rendering-list**
   - `https://react.dev/learn/rendering-lists`
 
+- `fetch()`
+  - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 
+- `async function`
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+
+- `await`
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
+
+- `try...catch`
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
+
+- `response.ok`
+  - from the Response interface
+  - https://developer.mozilla.org/en-US/docs/Web/API/Response
+
+- `response.json()`
+  - https://developer.mozilla.org/en-US/docs/Web/API/Response/json
+
+- `encodeURIComponent()`
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+
+- template literals
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+
+```md
+### MDN Resources for Search Functionality
+
+- Fetch API  
+  https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+- async function  
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+
+- await  
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
+
+- try...catch  
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
+
+- Response interface  
+  https://developer.mozilla.org/en-US/docs/Web/API/Response
+
+- Response.json()  
+  https://developer.mozilla.org/en-US/docs/Web/API/Response/json
+
+- encodeURIComponent()  
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+
+- Template literals  
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+```
+
+- React `useState`
+  - `https://react.dev/reference/react/useState`
+
+MDN for the JavaScript and browser parts:
+
+- forms
+  - `https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms`
+
+- `Event.preventDefault()`
+  - `https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault`
+
+- `String.prototype.trim()`
+  - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim`
+
+- functions
+  - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions`
+
+- input/change event
+  - `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event`
+
+- `preventDefault()`
+  `https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault`
+- `encodeURIComponent()`
+  `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent`
+- forms
+  `https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms`
 
 
 

@@ -11,7 +11,7 @@ export default function MovieCard({ movie }) {
 
     // If poster_path does not exist, use a placeholder image instead
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : "https://via.placeholder.com/300x450?text=No+Image";
+    : "null";
 
   console.log("MovieCard imageUrl:", imageUrl);
 
@@ -21,14 +21,11 @@ export default function MovieCard({ movie }) {
       {/* Main Container for one movie card - Use later for CSS  */}
       <div className="movie-card">
 
-        {/* Display movie poster img  
-    src for imageUrl
-    alt for movie title for access and screen  */}
+        {/* Display movie poster img - src for imageUrl - alt for movie title for access and screen  */}
         
         <img className="movie-poster" src={imageUrl} alt={movie.title} />
 
-        {/* Display movie title 
-    heading elements */}
+        {/* Display movie title heading elements */}
         <h3 className="movie-title">{movie.title}</h3>
 
         {/* Display movie rating from TMDB */}
