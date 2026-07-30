@@ -682,5 +682,8 @@ https://developer.themoviedb.org/docs/getting-started
 `TMDB movie Docs for search movie` 
 https://developer.themoviedb.org/reference/search-movie
 
+`TMDB movie API`
+https://www.themoviedb.org/settings/api
+
 `TMDB site` 
 https://www.themoviedb.org/tv
