@@ -80,26 +80,42 @@ export async function searchMovies(query) {
 // Fetch all movie genres from TMDB
 export async function getGenres() {
     try {
+        // Log message so we know this function has started running 
         console.log("Fetching genres...");
 
+        // Send a GET Request
+        // genre/movie/list is the endpoint - returns all movies  
         const response = await fetch(
             `${BASE_URL}/genre/movie/list?api_key=${API_KEY}`
         );
 
+        // Log the response from fetch 
+        // Helps me see if it works
         console.log("Genres response:", response);
 
+        // check whether the fetch request was successful
+        // response.ok is true for successful responses 
+        // if not throw error, send to catch 
         if (!response.ok) {
             throw new Error("Failed to fetch genres.");
         }
 
+        // convert the response body from JSON into JavavScript obj
         const data = await response.json();
 
+        // Log just the array of genres
+        // TMDB stores the actual genre list inside data.genres
         console.log("Genres data:", data);
         console.log("Genres list:", data.genres);
 
+        // Return the array of genres obj
         return data.genres;
     } catch (error) {
+
+        // if fail log error to help with debbugging 
         console.error("Genres fetch error:", error);
+
+        // Return empty array so app doesnt crash - safe fallback
         return [];
     }
 }

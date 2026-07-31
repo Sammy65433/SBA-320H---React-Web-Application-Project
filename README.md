@@ -521,8 +521,17 @@ At this stage, the app can fetch trending movies, display them in styled movie c
 **Why I am doing this after search:**
 Filtering is easier once the app already knows how to fetch and display movie data.
 
+- `getTrendingMovies()` gets the movies
+- `searchMovies()` gets movies matching a title
+- `getGenres()` gets the list of all possible genres
 
+Each function gets a different kind of data:
+- movies
+- search results
+- genres
 
+- you need `getGenres()` because movies only return genre IDs
+- `getGenres()` translates those IDs into real genre names for the dropdown and filtering
 
 
 MDN 
