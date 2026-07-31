@@ -77,3 +77,30 @@ export async function searchMovies(query) {
     }
 }
 
+// Fetch all movie genres from TMDB
+export async function getGenres() {
+    try {
+        console.log("Fetching genres...");
+
+        const response = await fetch(
+            `${BASE_URL}/genre/movie/list?api_key=${API_KEY}`
+        );
+
+        console.log("Genres response:", response);
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch genres.");
+        }
+
+        const data = await response.json();
+
+        console.log("Genres data:", data);
+        console.log("Genres list:", data.genres);
+
+        return data.genres;
+    } catch (error) {
+        console.error("Genres fetch error:", error);
+        return [];
+    }
+}
+
