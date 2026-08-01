@@ -667,6 +667,11 @@ Why this belongs here:
 
 I used `localStorage` to persist the watchlist so users can come back later and still see their saved movies.
 
+### Deployment and Persistence
+I deployed the project to Netlify and confirmed that the app works on the live site. I also verified that the watchlist persists after refresh using `localStorage`, which means saved movies remain available when the user returns to the app.
+
+Link to Project site: https://jovial-pixie-1164c3.netlify.app/
+
 ## MDN Resources Used
 
 ### API and Async JavaScript
