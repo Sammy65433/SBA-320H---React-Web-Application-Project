@@ -3,6 +3,7 @@
 
 `**Project:** SBA 320H - React Web Application Project ` 
 **Date:** July 29, 2026  
+**Due Date: 8/1 11:55PM**
 **Program:** Per Scholas Software Engineering
 
 
@@ -625,7 +626,9 @@ I successfully added genre filtering by fetching genre data from TMDB, storing i
 - Share watchlist state across components
 
 **Why I am doing this here:**
-After the main movie display works, I can then manage shared app state in a clear and practical way that satisfies the instructor requirement.
+After the main movie display works, I can then manage shared app state in a clear and practical way that satisfies the assignments requirement.
+
+I started in `WatchlistContext.jsx` because Context is the foundation for shared watchlist state. It allowed me to define the watchlist data and helper functions first, then connect them cleanly to components like `MovieCard` and `Watchlist`.
 
 
 ## MDN Resources Used
