@@ -14,6 +14,7 @@ export default function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [genres, setGenres] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState("");
+  
 
   useEffect(() => {
     async function loadData() {
@@ -92,10 +93,10 @@ export default function App() {
         selectedGenre={selectedGenre}
         onGenreChange={handleGenreChange}
       />
-
+      <Watchlist />
       {/* Displays the current list of movies stored in state. */}
       <MovieList movies={movies} />
-      <Watchlist />
+
     </div>
   )
 }

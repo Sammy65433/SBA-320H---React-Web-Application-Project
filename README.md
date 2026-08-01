@@ -3,7 +3,7 @@
 
 `**Project:** SBA 320H - React Web Application Project ` 
 **Date:** July 29, 2026  
-**Due Date: 8/1 11:55PM**
+**Due Date: 8/1/26 Time: 11:55PM**
 **Program:** Per Scholas Software Engineering
 
 
@@ -620,7 +620,7 @@ Although the genre filter worked functionally, styling it made the feature clear
 I successfully added genre filtering by fetching genre data from TMDB, storing it in `App.jsx`, passing it into `GenreFilter`, and filtering the displayed movies based on the selected genre. This feature made the app more interactive and improved the overall browsing experience.
 
 
-### 9. Add watchlist state with Context
+## 9. Add watchlist state with Context
 - Create a Context for the watchlist
 - Add and remove movies from the watchlist
 - Share watchlist state across components
@@ -630,6 +630,42 @@ After the main movie display works, I can then manage shared app state in a clea
 
 I started in `WatchlistContext.jsx` because Context is the foundation for shared watchlist state. It allowed me to define the watchlist data and helper functions first, then connect them cleanly to components like `MovieCard` and `Watchlist`.
 
+### Short Summary
+In this step, I added shared watchlist state using React Context so users could save movies from the movie cards and view or remove them from a watchlist section. I created `WatchlistContext.jsx` to store the watchlist array and helper functions, wrapped the app with `WatchlistProvider`, connected `MovieCard` to add movies, and connected `Watchlist` to display and remove saved movies. This made state management cleaner and avoided passing watchlist data through multiple components.
+
+### Problems I Ran Into
+- I had to understand that Context needed to be created first before `MovieCard` and `Watchlist` could use the shared state
+- I needed to wrap the app with `WatchlistProvider` in `main.jsx` or the context would not be available
+- I had to make sure duplicate movies were not added to the watchlist by checking movie IDs first
+- I realized the watchlist section at the bottom of the page felt less interactive, so I adjusted it to behave more like a toggle section
+- I needed additional CSS to make the watchlist clearer, more organized, and consistent with the rest of the app
+
+###  Mistakes Summary
+The main challenges were connecting Context correctly, preventing duplicate saved movies, and improving the watchlist layout so it felt easier to use.
+
+## 10. Save the watchlist with localStorage
+**What I am doing:**
+- Save watchlist data in the browser
+- Load saved watchlist when the user comes back
+- add `localStorage` inside **`WatchlistContext.jsx`**.
+
+**Why I am doing this after Context:**
+I need the watchlist state working first before I can persist it in localStorage.
+
+Do it there because that is where the watchlist state already lives.
+
+What this does:
+- when app starts:
+  - checks `localStorage` for saved watchlist data
+  - loads it into state if it exists
+- whenever `watchlist` changes:
+  - saves updated watchlist back into `localStorage`
+
+Why this belongs here:
+- `WatchlistContext` already controls the watchlist state
+- `localStorage` should be connected to the same place that owns the state
+
+I used `localStorage` to persist the watchlist so users can come back later and still see their saved movies.
 
 ## MDN Resources Used
 

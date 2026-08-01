@@ -1,9 +1,11 @@
 import "./../styles/MovieCard.css"
+import { useWatchlist } from "../context/WatchlistContext";
 
 
 export default function MovieCard({ movie }) {
 
   // console.log("MovieCard recieved movie:", movie);
+  const { addToWatchlist } = useWatchlist();
 
   // create image url for movie poster
   // If movie.poster_path exists, build a full TMDB image URL using
@@ -11,32 +13,24 @@ export default function MovieCard({ movie }) {
 
     // If poster_path does not exist, use a placeholder image instead
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : "null";
+    : null;
 
   // console.log("MovieCard imageUrl:", imageUrl);
 
 
   return (
-    <>
-      {/* Main Container for one movie card - Use later for CSS  */}
-      <div className="movie-card">
-
-        {/* Display movie poster img - src for imageUrl - alt for movie title for access and screen  */}
-        
+    <div className="movie-card">
+      {imageUrl ? (
         <img className="movie-poster" src={imageUrl} alt={movie.title} />
+      ) : (
+        <div className="no-image">No Image Available</div>
+      )}
 
-        {/* Display movie title heading elements */}
-        <h3 className="movie-title">{movie.title}</h3>
+      <h3 className="movie-title">{movie.title}</h3>
+      <p className="movie-rating">Rating: {movie.vote_average}</p>
+      <p className="movie-release-date">Release Date: {movie.release_date}</p>
 
-        {/* Display movie rating from TMDB */}
-
-        <p className="movie-rating">Rating: {movie.vote_average}</p>
-
-        {/* Display movie release date  */}
-        <p className="movie-release-date">Release Date: {movie.release_date}</p>
-
-      </div>;
-
-    </>
+      <button onClick={() => addToWatchlist(movie)}>Add to Watchlist</button>
+    </div>
   );
 }
