@@ -4,8 +4,8 @@ import "./../styles/MovieList.css"
 
 export default function MovieList({ movies = [] }) {
 
-  console.log("MovieList received movies:", movies);
-  console.log("MovieList movies length:", movies.length);
+  // console.log("MovieList received movies:", movies);
+  // console.log("MovieList movies length:", movies.length);
 
 
 
@@ -17,7 +17,7 @@ export default function MovieList({ movies = [] }) {
     <section className="movie-list-section">
 
       <h2
-      className="movie-list-title">Trending Movies</h2>
+      className="movie-list-title">Weekly Trending Movies</h2>
 
       <div className="movie-list">
       {movies.map((movie) => (

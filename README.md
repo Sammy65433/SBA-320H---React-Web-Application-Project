@@ -533,9 +533,140 @@ Each function gets a different kind of data:
 - you need `getGenres()` because movies only return genre IDs
 - `getGenres()` translates those IDs into real genre names for the dropdown and filtering
 
+## 8a. Add Genre Filtering
+
+I added a genre filtering feature so users can narrow the movie list by selecting a genre from a dropdown menu. This made the app more interactive and useful because users are no longer limited to only browsing all trending or searched movies at once.
+
+### `GenreFilter` Component
+I created a `GenreFilter` component to display the dropdown for genre filtering. This component receives its data and behavior through props passed down from `App.jsx`.
+
+The props used were:
+- `genres = []`
+  - an array of genre objects fetched from TMDB
+  - defaulting to an empty array prevents the app from crashing before the API data finishes loading
+
+- `selectedGenre`
+  - stores the currently selected genre in the dropdown
+
+- `onGenreChange`
+  - a function passed from `App.jsx` that runs when the user selects a genre
+
+  - `<label htmlFor="genre-select">`
+  - creates text for the dropdown
+  - `htmlFor` links the label to the dropdown by id
+
+- `id="genre-select"`
+  - gives the dropdown an id so the label can connect to it
+
+### How It Works
+1. The app fetches the list of movie genres from TMDB using a `getGenres()` function in `tmdb.js`
+2. The returned genre data is stored in state inside `App.jsx`
+3. `App.jsx` passes the `genres`, `selectedGenre`, and `onGenreChange` props into `GenreFilter`
+4. `GenreFilter` uses the `genres` array to build the dropdown options
+5. When the user selects a genre, the selected genre ID is sent back to `App.jsx`
+6. `App.jsx` filters the movie list by checking whether each movie’s `genre_ids` array includes the selected genre ID
+7. The displayed movie list updates to show only matching movies
+8. If the user selects `All Genres`, the full movie list is shown again
+
+Console log meanings:
+- `Fetching genres...`
+  - confirms genre fetch started
+- `Genres response:`
+  - checks raw response from TMDB
+- `Genres data:`
+  - checks full JSON object
+- `Genres list:`
+  - checks the array of genre objects
+- `Selected genre id:`
+  - checks what dropdown value user picked
+- `handleGenreChange genreId:`
+  - confirms `App` received the selected genre
+- `Filtered movies:`
+  - shows the movies that matched the selected genre
+- `Genre data in App:`
+  - confirms `App` got the genre data from `tmdb.js`
+
+### Why I Added Genre Filtering
+I added genre filtering after the search functionality because the app already knew how to fetch and display movie data. At that point, it was easier to build filtering on top of an existing movie array. This approach kept the project more organized and made debugging easier.
+
+### Problems I Ran Into
+While building this feature, I ran into a few issues:
+
+- At first, the dropdown did not show any options because I forgot to return the JSX in `GenreFilter.jsx`
+- I also rendered `<GenreFilter />` in `App.jsx` without passing the required props, so the component had no genre data or event handler
+- I initially set `selectedGenre` to an empty array instead of an empty string, which caused issues with the controlled dropdown value
+- I had to confirm that the genre API request was working by logging:
+  - the fetch response
+  - the full genre data object
+  - the `data.genres` array
+- To debug rendering, I temporarily displayed the genre list as a `<ul>` under the dropdown to confirm the genre data was actually being passed into the component
+
+### How I Solved Those Problems
+I fixed these issues by:
+- adding `return (...)` in `GenreFilter.jsx`
+- passing `genres`, `selectedGenre`, and `onGenreChange` into the component from `App.jsx`
+- changing `selectedGenre` to an empty string so the dropdown worked as a controlled input
+- using `console.log()` statements to trace the data from the TMDB response to the rendered dropdown
+- temporarily rendering the genres as a list to verify the data flow before relying on the dropdown UI
+
+### Genre Filter Styling
+I also added CSS styling for the genre filter to make the dropdown easier to see and use. I centered the filter section, styled the label text, and added padding, rounded corners, and font sizing to the dropdown. This helped the filter feel more polished and made it fit better with the rest of the app’s movie-themed design.
+
+### Why I Added CSS for This Step
+Although the genre filter worked functionally, styling it made the feature clearer and more user-friendly. The added CSS improved visibility, spacing, and overall presentation so the filter looked intentional instead of like a default browser element.
+
+### Short Summ
+I successfully added genre filtering by fetching genre data from TMDB, storing it in `App.jsx`, passing it into `GenreFilter`, and filtering the displayed movies based on the selected genre. This feature made the app more interactive and improved the overall browsing experience.
+
+
+### 9. Add watchlist state with Context
+- Create a Context for the watchlist
+- Add and remove movies from the watchlist
+- Share watchlist state across components
+
+**Why I am doing this here:**
+After the main movie display works, I can then manage shared app state in a clear and practical way that satisfies the instructor requirement.
+
+
 
 MDN 
 ## MDN Resources Used
+
+### MDN Resources Used
+
+- CSS text-align  
+  https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
+
+- CSS margin  
+  https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+
+- CSS padding  
+  https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+
+- border-radius  
+  https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+
+- font-size  
+  https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+
+- Array.prototype.filter()  
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+
+- Array.prototype.includes()  
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+
+- Number()  
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/Number
+
+- `<select>` element  
+  https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select
+
+- `<option>` element  
+  https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/option
+
+- `change` event  
+  https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
+
 
 - CSS Grid Layout  
   https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
@@ -626,6 +757,7 @@ MDN
   - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
 ```md
+
 ### MDN Resources for Search Functionality
 
 - Fetch API  

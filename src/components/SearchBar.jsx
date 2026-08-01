@@ -47,7 +47,7 @@ export default function SearchBar({ onSearch }) {
         onChange={(event) => {
           
           // Log the current input value to confirm typing is working.
-          console.log("Search input:", event.target.value);
+          // console.log("Search input:", event.target.value);
 
           // event.target.value is the current value inside the input field.
           setQuery(event.target.value);

@@ -3,7 +3,7 @@ import "./../styles/MovieCard.css"
 
 export default function MovieCard({ movie }) {
 
-  console.log("MovieCard recieved movie:", movie);
+  // console.log("MovieCard recieved movie:", movie);
 
   // create image url for movie poster
   // If movie.poster_path exists, build a full TMDB image URL using
@@ -13,7 +13,7 @@ export default function MovieCard({ movie }) {
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
     : "null";
 
-  console.log("MovieCard imageUrl:", imageUrl);
+  // console.log("MovieCard imageUrl:", imageUrl);
 
 
   return (

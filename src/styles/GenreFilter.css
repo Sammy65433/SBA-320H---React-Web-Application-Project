@@ -1,0 +1,17 @@
+.genre-filter {
+    text-align: center;
+    margin: 1.5rem 0 2rem;
+    color: white;
+}
+
+.genre-filter label {
+    margin-right: 0.75rem;
+    font-size: 1rem;
+}
+
+.genre-filter select {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+}
