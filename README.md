@@ -628,189 +628,57 @@ I successfully added genre filtering by fetching genre data from TMDB, storing i
 After the main movie display works, I can then manage shared app state in a clear and practical way that satisfies the instructor requirement.
 
 
-
-MDN 
 ## MDN Resources Used
 
-### MDN Resources Used
+### API and Async JavaScript
+- [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+- [await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+- [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
+- [Response interface](https://developer.mozilla.org/en-US/docs/Web/API/Response)
+- [Response.json()](https://developer.mozilla.org/en-US/docs/Web/API/Response/json)
+- [encodeURIComponent()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
+- [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 
-- CSS text-align  
-  https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
+### Arrays and Data Handling
+- [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+- [Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [Array.prototype.includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+- [Number()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/Number)
+- [String.prototype.trim()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim)
+- [JavaScript Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+- [Working with Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects)
+- [Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+- [Destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring)
+- [Conditional Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator)
 
-- CSS margin  
-  https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+### Forms and Events
+- [Forms](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms)
+- [Event.preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
+- [change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
 
-- CSS padding  
-  https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+### HTML Elements
+- [`<select>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select)
+- [`<option>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/option)
+- [`<label>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label)
 
-- border-radius  
-  https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+### CSS and Styling
+- [CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
+- [text-align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
+- [margin](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
+- [padding](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
+- [border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)
+- [font-size](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size)
+- [box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
+- [transition](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
+- [transform](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+- [translateY()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateY)
+- [:hover](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover)
 
-- font-size  
-  https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+### React Documentation
+- [Rendering Lists](https://react.dev/learn/rendering-lists)
+- [useState](https://react.dev/reference/react/useState)
 
-- Array.prototype.filter()  
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-
-- Array.prototype.includes()  
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
-
-- Number()  
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/Number
-
-- `<select>` element  
-  https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select
-
-- `<option>` element  
-  https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/option
-
-- `change` event  
-  https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
-
-
-- CSS Grid Layout  
-  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
-
-- box-shadow  
-  https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
-
-- transition  
-  https://developer.mozilla.org/en-US/docs/Web/CSS/transition
-
-- transform  
-  https://developer.mozilla.org/en-US/docs/Web/CSS/transform
-
-- translateY()  
-  https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateY
-
-- :hover  
-  https://developer.mozilla.org/en-US/docs/Web/CSS/:hover
-
-- Forms  
-  https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms
-
-- Event.preventDefault()  
-  https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
-
-- encodeURIComponent()  
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
-
-- Array.prototype.map()  
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
-
-- `Array.map()`
-  - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map`
-
-- `Conditional operator` for:
-  - `movie.poster_path ? ... : ...`
-  - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator`
-
-- `Template literals`
-  - for building the image URL
-  - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals`
-
-- `Functions`
-  - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions`
-
-- `JavaScript objects`
-  - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects`
-
-**`Array.prototype.map()`**:
-- `map()`  
-  `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map`
-
-- **Arrow functions**
-  `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions`
-
-- **Destructuring function parameters** for `({ movies })`
-  `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring`
-
-- **JavaScript functions**
-  `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions`
-
-- **React rendering-list**
-  - `https://react.dev/learn/rendering-lists`
-
-- `fetch()`
-  - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-
-- `async function`
-  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
-
-- `await`
-  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
-
-- `try...catch`
-  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
-
-- `response.ok`
-  - from the Response interface
-  - https://developer.mozilla.org/en-US/docs/Web/API/Response
-
-- `response.json()`
-  - https://developer.mozilla.org/en-US/docs/Web/API/Response/json
-
-- `encodeURIComponent()`
-  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
-
-- template literals
-  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-
-```md
-
-### MDN Resources for Search Functionality
-
-- Fetch API  
-  https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-
-- async function  
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
-
-- await  
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
-
-- try...catch  
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
-
-- Response interface  
-  https://developer.mozilla.org/en-US/docs/Web/API/Response
-
-- Response.json()  
-  https://developer.mozilla.org/en-US/docs/Web/API/Response/json
-
-- encodeURIComponent()  
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
-
-- Template literals  
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-```
-
-- React `useState`
-  - `https://react.dev/reference/react/useState`
-
-MDN for the JavaScript and browser parts:
-
-- forms
-  - `https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms`
-
-- `Event.preventDefault()`
-  - `https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault`
-
-- `String.prototype.trim()`
-  - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim`
-
-- functions
-  - `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions`
-
-- input/change event
-  - `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event`
-
-- `preventDefault()`
-  `https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault`
-- `encodeURIComponent()`
-  `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent`
-- forms
-  `https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms`
 
 
 
